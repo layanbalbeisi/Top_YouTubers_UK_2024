@@ -159,8 +159,7 @@ HAVING
     COUNT(*) > 1;
 ```
 ## Result 
-![Description of Image](https://github.com/layanbalbeisi/Top_YouTubers_UK_2024/blob/main/assests/images/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202024-09-19%20125902.png)
-
+![Dashboard](assests/images/Dashboard.png)
 ## DAX Measures
 
 ```dax
