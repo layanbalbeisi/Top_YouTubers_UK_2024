@@ -4,6 +4,8 @@
 - [Data Source](#data-source)
 - [Tools & Technologies](#tools--technologies)
 - [Methodology](#methodology)
+- [SQL Query Process](#sql-query-process)
+- [DAX Measures](#dax-measures)
 
 ## Introduction
 The dataset provides insights into the top YouTubers in the UK for 2024, focusing on three key metrics: Total Videos, Total Views, and Total Subscribers.
@@ -22,14 +24,30 @@ The dataset is sourced from Kaggle, but it required significant cleaning and pre
 3. **Testing**: Verified data accuracy and ensured that the key metrics aligned with the project goals.
 4. **Analysis**: Performed detailed analysis and created visualizations to present insights into the top UK YouTubers of 2024.
 
-
-
-# SQL Query Process
+## SQL Query Process
 
 In this project, I used SQL to clean and query the data effectively. Here’s a breakdown of the steps:
 
-## Step 1: Loading the Data
+### Step 1: Loading the Data
 First, I uploaded the raw dataset into an SQL database to make querying easier. This dataset included information about YouTubers such as total videos, total views, total subscribers, and more.
+
+### Step 2: Clean the Data
+
+```sql
+/*
+  Select the required columns: channel name, total subscribers, total views, and total videos.
+  Extract the channel name from the 'NOMBRE' column by removing the part after the '@' symbol.
+*/
+
+-- 1. Select the necessary columns and clean the channel name
+SELECT
+    SUBSTRING(NOMBRE, 1, CHARINDEX('@', NOMBRE) - 1) AS channel_name,  -- Extract channel name before '@'
+    total_subscribers,
+    total_views,
+    total_videos
+FROM
+    top_uk_youtubers_2024;
+
 
 ## Step 2: Clean the Data
 
